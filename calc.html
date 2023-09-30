@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<title>Calculator</title>
+<style>
+body
+{
+margin:150px;
+}
+input{
+width:99%;
+height:100%;
+}
+table{
+    width: 30%;
+    height: 500px;
+}
+.se
+{
+    height:48px;
+}
+
+@media screen and (max-width: 600px) {
+    
+    table{
+        font-size: larger;
+        position: absolute;
+        left: 20px;
+        width: 200%;
+        height: 1000px;
+    }
+    .si{
+        font-size: 35px;
+    }
+    h1
+    {
+        font-size:50px;
+    }
+    #se
+    {
+        height: 150px;
+    }
+    
+}
+/*@media screen and (width > 600px) {
+    table{
+        font-size: larger;
+        position: absolute;
+        left: 20px;
+        width: 90%;
+        top:60px;
+        height: 900px;
+    }
+    .si{
+        font-size: 35px;
+    }
+    h1
+    {
+        font-size:50px;
+    }
+    #se
+    {
+        height: 150px;
+    }
+    
+}*/
+</style>
+<script>
+function display(x){
+document.getElementById("text1").value+=x;
+}
+function compute(){
+var x = document.getElementById("text1").value;
+document.getElementById("text1").value = eval(x);
+}
+</script> 
+</head>
+<body>
+<center>
+<form>
+<table border="5" bgcolor="lime">
+<tr>
+<th colspan=4><h1>Calculator</h1></th>
+</tr>
+<tr >
+<td colspan=4><input type="text" id="text1" 
+placeholder="0" style="text-align:right;" class="si"/></td>
+</tr>
+<tr>
+<td><input type="reset" value="C" class="si"/></td>
+<td><input type="button" value="/" 
+onClick="display(this.value)" class="si"/></td>
+<td><input type="button" value="*" 
+onClick="display(this.value)" class="si"/></td>
+<td><input type="button" value="-" 
+onClick="display(this.value)" class="si"></td>
+</tr>
+<tr>
+<td><input type="button" value="7" 
+onClick="display(this.value)" class="si"></td>
+<td><input type="button" value="8" 
+onClick="display(this.value)" class="si"></td>
+<td><input type="button" value="9" 
+onClick="display(this.value)" class="si"></td>
+<td rowspan=2><input type="button" value="+" 
+ onClick="display(this.value)"class="si" class="se"></td>
+</tr>
+<tr>
+<td><input type="button" value="4" 
+onClick="display(this.value)" class="si"></td>
+<td><input type="button" value="5" 
+onClick="display(this.value)" class="si"></td>
+<td><input type="button" value="6" 
+onClick="display(this.value)" class="si"></td>
+</tr>
+<tr>
+<td><input type="button" value="1" 
+onClick="display(this.value)" class="si"></td>
+<td><input type="button" value="2" 
+onClick="display(this.value)" class="si"></td>
+<td><input type="button" value="3" 
+onClick="display(this.value)" class="si"></td>
+<td rowspan=2><input type="button" value="=" 
+ onClick="compute()" class="si" class="se"></td>
+</tr>
+<tr>
+<td colspan=2><input type="button" value="0" 
+onClick="display(this.value)" style="width:100%" class="si"></td>
+<td><input type="button" value="." 
+onClick="display(this.value)" class="si"></td>
+</tr>
+</table>
+</form>
+</center>
+</body>
+</html>
